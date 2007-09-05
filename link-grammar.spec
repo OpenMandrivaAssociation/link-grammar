@@ -1,5 +1,5 @@
 %define name	link-grammar
-%define version	4.2.2
+%define version	4.2.4
 %define cvs	%nil
 %define release	1
 
