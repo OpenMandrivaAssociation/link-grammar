@@ -1,5 +1,5 @@
 %define name	link-grammar
-%define version	4.2.4
+%define version	4.2.5
 %define cvs	%nil
 %define release	1
 
@@ -20,7 +20,7 @@ URL:		http://www.link.cs.cmu.edu/link/
 # URL:		http://www.abisource.com/downloads/link-grammar/
 
 #Requires:
-BuildRequires:	automake1.9 
+BuildRequires:	automake1.9
 
 %description
 The Link Grammar Parser is a syntactic parser of English, based
