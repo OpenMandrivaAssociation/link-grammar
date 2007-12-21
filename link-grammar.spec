@@ -14,6 +14,7 @@ Group:		Office
 License:	BSD-like
 Source:		%{name}-%{version}.tar.bz2
 Patch1:		link-grammar-4.1.2-automake.patch.bz2
+Buildroot:	%_tmppath/%{name}-%{version}-root
 URL:		http://www.link.cs.cmu.edu/link/
 # Patched release:
 # URL:		http://www.abisource.com/downloads/link-grammar/
