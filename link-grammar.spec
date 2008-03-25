@@ -1,7 +1,7 @@
 %define name	link-grammar
 %define version	4.2.5
 %define cvs	%nil
-%define release	1
+%define release	2
 
 %define lib_major       4
 %define lib_name        %mklibname link-grammar%{lib_major}
@@ -32,7 +32,7 @@ sentence (showing noun phrases, verb phrases, etc.).
 
 %package -n %{lib_name}
 Summary:	A syntactic parser of English
-Group:		Office
+Group:		System/Libraries
 
 %description -n %{lib_name}
 The Link Grammar Parser is a syntactic parser of English, based
@@ -44,7 +44,7 @@ sentence (showing noun phrases, verb phrases, etc.).
 
 %package -n %{lib_name}-devel
 Summary:	Support files necessary to compile applications with link-grammar
-Group:		Office
+Group:		 Development/C
 Requires:	%{lib_name} = %{version}
 Requires:	link-grammar
 Provides:	link-grammar-devel
@@ -56,7 +56,6 @@ link-grammar.
 %prep
 
 %setup -q -n %{name}-%{version}
-#%patch1 -p1 -b .automake
 
 %build
 # cvs build, run autogen.sh:
@@ -88,7 +87,8 @@ find $RPM_BUILD_ROOT/%{_libdir} -name \*.la -exec rm -f \{\} \;
 
 %files -n %{lib_name}
 %defattr(644,root,root,755)
-%{_libdir}/lib*.so.*
+%{_libdir}/lib*.so.%{lib_major}
+%{_libdir}/lib*.so.%{lib_major}.*
 
 %files -n %{lib_name}-devel
 %defattr(644,root,root,755)
