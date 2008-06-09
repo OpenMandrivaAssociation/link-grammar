@@ -72,11 +72,9 @@ find $RPM_BUILD_ROOT/%{_libdir} -name \*.la -exec rm -f \{\} \;
 %clean
 [ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != "/" ] && rm -fr $RPM_BUILD_ROOT
 
-%post -n %{lib_name}
-/sbin/ldconfig
+%post -n %{lib_name} -p /sbin/ldconfig
 
-%postun -n %{lib_name}
-/sbin/ldconfig
+%postun -n %{lib_name} -p /sbin/ldconfig
 
 
 %files
