@@ -1,7 +1,7 @@
 %define name	link-grammar
 %define version	4.2.5
 %define cvs	%nil
-%define release	2
+%define release	3
 
 %define lib_major       4
 %define lib_name        %mklibname link-grammar%{lib_major}
