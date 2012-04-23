@@ -21,6 +21,7 @@ URL:		http://www.link.cs.cmu.edu/link/
 #Requires:
 BuildRequires:	automake1.9
 BuildRequires:	ant
+BuildRequires:	java-openjdk
 
 %description
 The Link Grammar Parser is a syntactic parser of English, based
@@ -60,9 +61,9 @@ link-grammar.
 %build
 # cvs build, run autogen.sh:
 #./autogen.sh
-%configure
+%configure2_5x
 # 4.1.1: parallel make is broken
-make
+%make
 
 %install
 %makeinstall_std
