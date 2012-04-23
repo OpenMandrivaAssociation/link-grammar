@@ -1,7 +1,7 @@
 %define name	link-grammar
-%define version	4.2.5
+%define version	4.7.5
 %define cvs	%nil
-%define release	3
+%define release	1
 
 %define lib_major       4
 %define lib_name        %mklibname link-grammar%{lib_major}
@@ -12,15 +12,15 @@ Version:	%{version}
 Release:	%mkrel %{release}
 Group:		Office
 License:	BSD-like
-Source:		%{name}-%{version}.tar.bz2
+Source0:	http://www.abisource.com/downloads/link-grammar/%{version}/%{name}-%{version}.tar.gz
 Patch1:		link-grammar-4.1.2-automake.patch.bz2
-Buildroot:	%_tmppath/%{name}-%{version}-root
 URL:		http://www.link.cs.cmu.edu/link/
 # Patched release:
 # URL:		http://www.abisource.com/downloads/link-grammar/
 
 #Requires:
 BuildRequires:	automake1.9
+BuildRequires:	ant
 
 %description
 The Link Grammar Parser is a syntactic parser of English, based
@@ -65,20 +65,8 @@ link-grammar.
 make
 
 %install
-if [ -d $RPM_BUILD_ROOT ]; then rm -r $RPM_BUILD_ROOT; fi
-%make DESTDIR=$RPM_BUILD_ROOT install
+%makeinstall_std
 find $RPM_BUILD_ROOT/%{_libdir} -name \*.la -exec rm -f \{\} \;
-
-%clean
-[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != "/" ] && rm -fr $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post -n %{lib_name} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{lib_name} -p /sbin/ldconfig
-%endif
 
 
 %files
@@ -86,6 +74,9 @@ find $RPM_BUILD_ROOT/%{_libdir} -name \*.la -exec rm -f \{\} \;
 %doc LICENSE README
 %attr(755,root,root)%{_bindir}/*
 %{_datadir}/link-grammar/*
+%{_mandir}/man1/link-parser.1.*
+%{_datadir}/java/*.jar
+
 
 %files -n %{lib_name}
 %defattr(644,root,root,755)
