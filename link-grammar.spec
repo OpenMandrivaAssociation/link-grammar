@@ -77,8 +77,6 @@ find $RPM_BUILD_ROOT/%{_libdir} -name \*.la -exec rm -f \{\} \;
 %attr(755,root,root)%{_bindir}/*
 %{_datadir}/link-grammar/*
 %{_mandir}/man1/link-parser.1.*
-%{_datadir}/java/*.jar
-
 
 %files -n %{lib_name}
 %defattr(644,root,root,755)
