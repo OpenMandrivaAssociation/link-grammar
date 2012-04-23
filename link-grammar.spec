@@ -22,6 +22,7 @@ URL:		http://www.link.cs.cmu.edu/link/
 BuildRequires:	automake1.9
 BuildRequires:	ant
 BuildRequires:	java-openjdk
+BuildRequires:	java-devel-openjdk
 
 %description
 The Link Grammar Parser is a syntactic parser of English, based
