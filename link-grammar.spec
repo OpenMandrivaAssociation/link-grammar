@@ -5,7 +5,7 @@
 Summary:	A syntactic parser of English
 Name:		link-grammar
 Version:	4.8.5
-Release:	6
+Release:	7
 Group:		Office
 License:	BSD-like
 Url:		http://www.link.cs.cmu.edu/link/
