@@ -8,7 +8,7 @@ Version:	4.8.5
 Release:	7
 Group:		Office
 License:	BSD-like
-Url:		http://www.link.cs.cmu.edu/link/
+Url:		https://www.link.cs.cmu.edu/link/
 Source0:	http://www.abisource.com/downloads/link-grammar/%{version}/%{name}-%{version}.tar.gz
 
 %description
