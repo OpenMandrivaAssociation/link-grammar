@@ -11,6 +11,11 @@ License:	BSD-like
 Url:		https://www.link.cs.cmu.edu/link/
 Source0:	http://www.abisource.com/downloads/link-grammar/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 The Link Grammar Parser is a syntactic parser of English, based
 on link grammar, an original theory of English syntax. Given a
